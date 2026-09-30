@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#d8eee5">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Quiet Creek">
-  <title>Slow the Waves with Suki</title>
-  <meta name="description" content="A gentle, child-friendly breathing activity guided by Suki the snake.">
+  <title>Slow the Waves with Pogo</title>
+  <meta name="description" content="A gentle, child-friendly breathing activity guided by Pogo the Pufferfish.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='18' width='64' height='64' fill='%2318364A'/%3E%3Cpath d='M16 37c8-13 17-13 32 0' fill='none' stroke='%23D9F1F5' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='19' r='6' fill='%23F6C85F'/%3E%3C/svg%3E">
@@ -17,30 +17,35 @@
   <main class="app-shell" id="app">
     <section class="screen active home-screen" id="home" aria-labelledby="home-title">
       <header class="topbar"><span class="brand">Quiet Creek</span><button class="round-button" id="settingsButton" aria-label="Open grown-up settings">⚙</button></header>
-      <div class="home-copy"><p class="eyebrow">A quiet moment with Suki</p><h1 id="home-title">Slow the Waves</h1><p>Follow Suki through five small, easy breaths. You can stop anytime.</p></div>
-      <div class="home-suki" aria-hidden="true"><img src="suki-snake.png" alt=""></div>
-      <button class="primary" id="meetSukiButton">Start with Suki</button>
+      <div class="home-copy"><p class="eyebrow">A quiet moment with Pogo</p><h1 id="home-title">Slow the Waves</h1><p>Follow Pogo through five small, easy breaths. You can stop anytime.</p></div>
+      <div class="home-suki" aria-hidden="true"><img src="pogo-pufferfish.png" alt=""></div>
+      <button class="primary" id="meetPogoButton">Start with Pogo</button>
       <p class="quiet-note">Breathing should feel comfortable. If it does not, stop and breathe normally.</p>
     </section>
 
     <section class="screen" id="preview" aria-labelledby="preview-title">
       <header class="topbar"><button class="round-button" data-back="home" aria-label="Back">←</button><span class="step-label">Meet your coach</span><span class="topbar-spacer"></span></header>
       <div class="coach-card">
-        <div class="coach-orbit"><img class="suki-preview" src="suki-snake.png" alt="Suki, a friendly green snake"></div>
-        <p class="eyebrow">Suki the snake</p><h2 id="preview-title">Breathe in gently. Then make a soft “ssss.”</h2>
-        <p>No big breath needed. Just follow the words and Suki.</p>
+        <div class="coach-orbit"><img class="suki-preview" src="pogo-pufferfish.png" alt="Pogo, a friendly pufferfish"></div>
+        <p class="eyebrow">Pogo the Pufferfish</p><h2 id="preview-title">Breathe in gently. Then let the bubbles float away.</h2>
+        <p>No big breath needed. Just follow the words and Pogo.</p>
       </div>
       <div class="safety-card"><span aria-hidden="true">♡</span><p><strong>Keep it easy.</strong><br>Stop anytime and take a normal breath.</p></div>
-      <button class="primary" id="startButton">Breathe with Suki</button>
+      <button class="primary" id="startButton">Breathe with Pogo</button>
     </section>
 
     <section class="screen breath-screen" id="breathe" aria-labelledby="breath-title">
       <header class="topbar"><button class="round-button" id="pauseButton" aria-label="Pause">Ⅱ</button><span class="cycle" id="cycleText">Breath 1 of 5</span><button class="stop-button" id="stopButton">Stop</button></header>
       <div class="breath-stage">
-        <p class="eyebrow fixed-kicker" id="phaseKicker">Follow Suki</p>
+        <p class="eyebrow fixed-kicker" id="phaseKicker">Follow Pogo</p>
         <div class="phase-word-wrap" aria-hidden="true"><span class="phase-word base" id="phaseWordBase">BREATHE IN</span><span class="phase-word fill" id="phaseWordFill">BREATHE IN</span></div>
         <h2 class="sr-only" id="breath-title">Breathe in gently</h2>
-        <div class="suki-stage"><div class="breath-halo" aria-hidden="true"></div><img id="sukiBreathing" src="suki-snake.png" alt="Suki breathing gently with you"></div>
+        <div class="suki-stage pogo-stage" aria-label="Pogo breathing gently with you">
+          <div class="breath-halo" aria-hidden="true"></div>
+          <img class="pogo-fins" src="pogo-pufferfish.png" alt="">
+          <div class="pogo-body-wrap" aria-hidden="true"><img id="sukiBreathing" class="pogo-body" src="pogo-pufferfish.png" alt=""><span class="pogo-color"></span></div>
+          <div class="bubble-field" aria-hidden="true"><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span></div>
+        </div>
         <p class="phase-cue" id="phaseCue">Let your belly make a little room.</p>
         <div class="sr-only" id="phaseAnnouncer" aria-live="polite"></div>
       </div>
@@ -51,7 +56,7 @@
     </section>
 
     <section class="screen finish-screen" id="complete" aria-labelledby="complete-title">
-      <div class="checkout-art"><span class="star" aria-hidden="true">✦</span><img class="suki-checkout" src="suki-snake.png" alt="Suki resting calmly"></div>
+      <div class="checkout-art"><span class="star" aria-hidden="true">✦</span><img class="suki-checkout" src="pogo-pufferfish.png" alt="Pogo resting calmly"></div>
       <p class="eyebrow">Five gentle breaths</p><h2 id="complete-title" tabindex="-1">You slowed the waves.</h2>
       <p class="finish-copy">Notice how you feel. There is no right answer.</p>
       <button class="primary" id="replayButton">Breathe again</button><button class="text-button" data-back="home">All done</button>
